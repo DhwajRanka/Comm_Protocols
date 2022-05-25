@@ -1,3 +1,5 @@
+//slave
+
 #include <Wire.h>  //Library for I2C Communication functions
 int recdata;  //define received data 
 
