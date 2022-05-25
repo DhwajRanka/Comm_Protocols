@@ -1,0 +1,20 @@
+//sender's code
+int i;
+void setup() {
+
+  Serial.begin(9600);
+}
+ 
+void loop() {
+  
+  int sensor = analogRead(A0);
+
+
+  byte highByte = sensor / 256; // divide by 256 to get the first byte:
+  byte lowByte = sensor % 256;  // modulo by 256 to get the second byte:
+  
+  byte  arr[]={highByte,lowByte}; //define the array elements, we create an array because we can use serial write in void loop only once
+  for(i=0;i<2;i++){
+  Serial.write(arr[i]); //send the array to receiver side
+  }
+}
