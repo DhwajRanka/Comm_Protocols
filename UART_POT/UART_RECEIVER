@@ -1,0 +1,35 @@
+byte highByte;
+byte lowByte;
+int result;
+int x;
+int y;
+int i;
+byte arr[2];
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+
+ void loop()
+{
+  result=0;
+  //int arr=Serial.read();
+   for(i=0;i<2;i++)
+   {
+    arr[i]=Serial.read();  // read the array 
+   }
+   //arr[0,1]=Serial.read(); 
+   //arr[1]=Serial.read();
+   //result=highByte * 256 + lowByte;
+   x = arr[0]; // deine 0th element of array
+   y = arr[1]; //define 1st element of array
+   result = x* 256 + y; // we getting both high byte and low byte and compiling it together,  For example, 3 * 256 + 255 = 1023. 
+   i=0;
+   //Serial.println(arr[1]);
+   //Serial.println(arr[0]);
+   //Serial.println(arr[1]);
+   //result=Serial.read();
+   Serial.println(result); //print the final result
+ }
